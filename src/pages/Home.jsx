@@ -1,107 +1,231 @@
 import React from 'react';
-import home1 from '../assets/home1.png';
-import home2 from '../assets/home2.png';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import hero1 from '../../assets/hero1.png';
+import hero2 from '../../assets/hero2.png';
+import hero3 from '../../assets/hero3.png';
+import hero4 from '../../assets/hero4.png';
+import hero5 from '../../assets/hero5.png';
+import hero6 from '../../assets/hero6.png';
+import hero7 from '../../assets/hero7.png';
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-2 md:px-4">
-      {/* Hero Section */}
-      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 w-full max-w-5xl py-10 md:py-16">
-        {/* Image Placeholder */}
-        <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
-          <img
-            src={home1}
-            alt="Mechanic Service"
-            className="w-48 h-48 md:w-72 md:h-72 object-contain rounded-xl shadow-lg border-4 border-[#ffa970] bg-[#fff7f0]"
-          />
-        </div>
-        {/* Text Content */}
-        <div className="w-full md:w-1/2 flex flex-col items-start">
-          <h1
-            className="text-3xl md:text-5xl font-extrabold mb-4"
-            style={{ color: '#ff6500' }}
-          >
-            Ndandani
-          </h1>
-          <h2
-            className="text-xl md:text-2xl font-semibold mb-6"
-            style={{ color: '#ff8c40' }}
-          >
-            Online Bengkel Service
-          </h2>
-          <p className="text-base md:text-lg mb-8 text-gray-700">
-            Need a mechanic? Ndandani brings trusted vehicle repair services
-            right to your location. Fast, reliable, and just a tap away—like
-            Gojek, but for your car or motorcycle!
-          </p>
-          <button
-            className="px-6 md:px-8 py-3 rounded-full text-white font-bold text-base md:text-lg shadow-lg transition-colors duration-200"
-            style={{
-              background:
-                'linear-gradient(90deg, #ff6500 0%, #ff8c40 60%, #ffa970 100%)',
-            }}
-          >
-            Get Started
-          </button>
-        </div>
-      </div>
-      {/* Features Section */}
-      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12 px-2 md:px-0">
-        <div className="bg-[#fff7f0] rounded-xl p-4 md:p-6 shadow border-t-4 border-[#ff6500] flex flex-col items-center">
-          <div className="w-12 h-12 md:w-16 md:h-16 bg-[#ff6500] rounded-full flex items-center justify-center mb-4 text-white text-2xl md:text-3xl font-bold">
-            1
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      
+      {/* Main content area - placeholder for now */}
+      <main className="flex-1">
+
+        {/* Help Section */}
+        <div className="py-20">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="flex flex-col lg:flex-row items-center gap-12">
+              {/* Left Content */}
+              <div className="lg:w-1/2">
+                <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                  Need help with<br />
+                  maintenance or repairs?
+                </h2>
+                <p className="text-gray-600 mb-8 text-lg">
+                  Get professional mechanic services delivered to your location. 
+                  Fast, reliable, and affordable solutions for all your vehicle needs.
+                </p>
+                
+                {/* Location Input */}
+                <div className="mb-6">
+                  <div className="relative">
+                    <input
+                      type="text"
+                      placeholder="Enter your location"
+                      className="w-full px-4 py-3 pr-12 border border-gray-100 rounded-4xl bg-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-700 placeholder-gray-400"
+                    />
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+                      <svg 
+                        className="w-5 h-5 text-orange-500" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" 
+                        />
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" 
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+                <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
+                  Book now
+                </button>
+              </div>
+              
+              {/* Right Image Placeholder */}
+              <div className="lg:w-1/2">
+                <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8 h-80 flex items-center justify-center">
+                  <div className="text-center text-orange-600">
+                    <img src={hero1} alt="Hero 1" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3
-            className="font-bold text-lg md:text-xl mb-2"
-            style={{ color: '#ff6500' }}
-          >
-            Easy Booking
-          </h3>
-          <p className="text-gray-600 text-center text-sm md:text-base">
-            Book a mechanic anytime, anywhere, in just a few clicks.
-          </p>
         </div>
-        <div className="bg-[#fff7f0] rounded-xl p-4 md:p-6 shadow border-t-4 border-[#ff8c40] flex flex-col items-center">
-          <div className="w-12 h-12 md:w-16 md:h-16 bg-[#ff8c40] rounded-full flex items-center justify-center mb-4 text-white text-2xl md:text-3xl font-bold">
-            2
+
+        {/* Why Choose Ndandani Section */}
+        <div className="py-20">
+          <div className="max-w-7xl mx-auto px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-16">
+              Why choose Ndandani?
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {/* Fix it anywhere */}
+              <div className="text-center">
+                <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8 h-48 flex items-center justify-center mb-6">
+                  <div className="text-orange-600">
+                    <img src={hero2} alt="Hero 2" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Fix it anywhere</h3>
+                <p className="text-gray-600">
+                  Book mechanic services directly from the app and 
+                  get your vehicle fixed at your preferred location.
+                </p>
+              </div>
+
+              {/* Find the best repair shop */}
+              <div className="text-center">
+                <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8 h-48 flex items-center justify-center mb-6">
+                  <div className="text-orange-600">
+                      <img src={hero3} alt="Hero 3" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Find the best repair shop</h3>
+                <p className="text-gray-600">
+                  Discover top-rated repair shops in your area with 
+                  verified reviews and competitive pricing.
+                </p>
+              </div>
+
+              {/* Get the right parts, anytime */}
+              <div className="text-center">
+                <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8 h-48 flex items-center justify-center mb-6">
+                  <div className="text-orange-600">
+                    <img src={hero4} alt="Hero 4" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Get the right parts, anytime</h3>
+                <p className="text-gray-600">
+                  Shop authentic spare parts with quality guarantee 
+                  and fast delivery to your doorstep.
+                </p>
+              </div>
+            </div>
           </div>
-          <h3
-            className="font-bold text-lg md:text-xl mb-2"
-            style={{ color: '#ff8c40' }}
-          >
-            Trusted Mechanics
-          </h3>
-          <p className="text-gray-600 text-center text-sm md:text-base">
-            All mechanics are verified and rated by customers.
-          </p>
         </div>
-        <div className="bg-[#fff7f0] rounded-xl p-4 md:p-6 shadow border-t-4 border-[#ffa970] flex flex-col items-center">
-          <div className="w-12 h-12 md:w-16 md:h-16 bg-[#ffa970] rounded-full flex items-center justify-center mb-4 text-white text-2xl md:text-3xl font-bold">
-            3
+
+        {/* Request Mechanic Section */}
+        <div className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
+              Request mechanic help anytime, on any device
+            </h2>
+            <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+              Get instant access to professional mechanics through our platform, 
+              available 24/7 on all your devices.
+            </p>
+            
+            <div className="space-y-16">
+              {/* Step 1 - Enter Location */}
+              <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className="lg:w-1/2">
+                  <div className="bg-white rounded-2xl p-8 h-64 flex items-center justify-center shadow-lg">
+                    <div className="text-center text-orange-600">
+                        <img src={hero5} alt="Hero 5" />
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:w-1/2">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      1
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">Enter your location</h3>
+                      <p className="text-gray-600">
+                        Simply enter your current address or let us auto-detect your location 
+                        to find the nearest available mechanics.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 2 - Choose Service */}
+              <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+                <div className="lg:w-1/2">
+                  <div className="bg-white rounded-2xl p-8 h-64 flex items-center justify-center shadow-lg">
+                    <div className="text-center text-orange-600">
+                       <img src={hero6} alt="Hero 6" />
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:w-1/2">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      2
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">Choose service type</h3>
+                      <p className="text-gray-600">
+                        Select from our range of services including Oil Service, Brake Service, 
+                        or Basic Tune up to get the right help for your vehicle.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 3 - Get Assistance */}
+              <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className="lg:w-1/2">
+                  <div className="bg-white rounded-2xl p-8 h-64 flex items-center justify-center shadow-lg">
+                    <div className="text-center text-orange-600">
+                      <img src={hero7} alt="Hero 7" />
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:w-1/2">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      3
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">Get instant assistance</h3>
+                      <p className="text-gray-600">
+                        Connect with certified mechanics in your area who will provide 
+                        professional service and get you back on the road quickly.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3
-            className="font-bold text-lg md:text-xl mb-2"
-            style={{ color: '#ffa970' }}
-          >
-            On-Demand Service
-          </h3>
-          <p className="text-gray-600 text-center text-sm md:text-base">
-            Get help at your location, whenever you need it.
-          </p>
         </div>
-      </div>
-      {/* Extra Section: Image or Banner */}
-      <div className="w-full max-w-5xl flex flex-col items-center mt-10 md:mt-20 mb-6 md:mb-10 px-2 md:px-0">
-        <img
-          src={home2}
-          alt="Service Banner"
-          className="w-full max-w-2xl md:max-w-3xl rounded-2xl shadow-lg bg-[#fff7f0] object-cover"
-        />
-        <p className="mt-4 text-base md:text-lg text-[#ff8c40] font-semibold text-center">
-          Fast, reliable, and always ready to help you on the road!
-        </p>
-      </div>
-      {/* Footer removed, now handled by Footer component in App.jsx */}
+      </main>
+      
+      <Footer />
     </div>
   );
 };

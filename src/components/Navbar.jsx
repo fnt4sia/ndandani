@@ -1,60 +1,42 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import logonavbar from '../assets/logonavbar.jpg'; 
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const location = useLocation();
-  const [open, setOpen] = React.useState(false);
-
   return (
-    <nav className="bg-white shadow-md px-4 md:px-12 py-4 flex items-center justify-between relative">
-      <div className="flex items-center">
-        <img src={logonavbar} alt="Ndandani Logo" className="h-12 w-auto md:h-16 rounded-lg shadow" />
-      </div>
-      {/* Desktop Menu */}
-      <div className="hidden md:flex space-x-8">
-        <Link
-          to="/"
-          className={`text-lg font-medium px-4 py-2 rounded transition-colors duration-200 ${location.pathname === '/' ? 'bg-[#ff6500] text-white' : 'text-[#ff6500] hover:bg-[#ff8c40] hover:text-white'}`}
-        >
-          Home
+    <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 h-[70px]">
+        {/* Logo/Brand */}
+        <Link to="/" className="text-2xl font-bold text-gray-800 hover:text-orange-500 transition-colors duration-300">
+          Ndandani
         </Link>
-        <Link
-          to="/about"
-          className={`text-lg font-medium px-4 py-2 rounded transition-colors duration-200 ${location.pathname === '/about' ? 'bg-[#ff6500] text-white' : 'text-[#ff6500] hover:bg-[#ff8c40] hover:text-white'}`}
-        >
-          About Us
-        </Link>
-      </div>
-      {/* Mobile Hamburger */}
-      <button
-        className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
-        onClick={() => setOpen(!open)}
-        aria-label="Toggle menu"
-      >
-        <span className={`block w-6 h-0.5 bg-[#ff6500] mb-1 transition-all duration-300 ${open ? 'rotate-45 translate-y-2' : ''}`}></span>
-        <span className={`block w-6 h-0.5 bg-[#ff6500] mb-1 transition-all duration-300 ${open ? 'opacity-0' : ''}`}></span>
-        <span className={`block w-6 h-0.5 bg-[#ff6500] transition-all duration-300 ${open ? '-rotate-45 -translate-y-2' : ''}`}></span>
-      </button>
-      {/* Mobile Menu */}
-      {open && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center z-50 md:hidden animate-fade-in">
-          <Link
-            to="/"
-            className={`w-full text-center text-lg font-medium px-4 py-3 border-b border-gray-100 ${location.pathname === '/' ? 'bg-[#ff6500] text-white' : 'text-[#ff6500] hover:bg-[#ff8c40] hover:text-white'}`}
-            onClick={() => setOpen(false)}
-          >
+
+        {/* Navigation Links */}
+        <div className="flex items-center space-x-8">
+          <Link to="/" className="text-gray-500 hover:text-orange-500 font-medium text-base transition-colors duration-300 relative group">
             Home
+            <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link
-            to="/about"
-            className={`w-full text-center text-lg font-medium px-4 py-3 border-b border-gray-100 ${location.pathname === '/about' ? 'bg-[#ff6500] text-white' : 'text-[#ff6500] hover:bg-[#ff8c40] hover:text-white'}`}
-            onClick={() => setOpen(false)}
-          >
-            About Us
+          <Link to="/bengkel" className="text-gray-500 hover:text-orange-500 font-medium text-base transition-colors duration-300 relative group">
+            Bengkel
+            <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link to="/mitra" className="text-gray-500 hover:text-orange-500 font-medium text-base transition-colors duration-300 relative group">
+            Booking
+            <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link to="/mitra" className="text-gray-500 hover:text-orange-500 font-medium text-base transition-colors duration-300 relative group">
+            Mitra
+            <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
           </Link>
         </div>
-      )}
+
+        {/* Login Button */}
+        <div className="flex items-center">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
+            Log in
+          </button>
+        </div>
+      </div>
     </nav>
   );
 };
